@@ -18,7 +18,6 @@ function handleSymbol(symbol) {
         buffer = '0';
         runningTotal = 0;
     }
-
     switch (symbol) {
         case 'C':
             buffer = '0';
@@ -31,7 +30,7 @@ function handleSymbol(symbol) {
             handleDeletion();
             break;
         case '+':
-        case '-':
+        case '−':
         case '×':
         case '÷':
             handleMath(symbol)
@@ -79,7 +78,7 @@ function handleMath(symbol) {
 function flushOperation(intBuffer) {
     if (previousOperator === '+') {
         runningTotal += intBuffer;
-    } else if (previousOperator === '-') {
+    } else if (previousOperator === '−') {
         runningTotal -= intBuffer;
     } else if (previousOperator === '×') {
         runningTotal *= intBuffer;
